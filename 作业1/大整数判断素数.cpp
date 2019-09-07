@@ -1,13 +1,22 @@
 /*
- * 大整数测试素数算法
- * 2019年9月5日
+ * ?????????
+ * 2019?9?5?
 */
 
 #include<iostream>
 #include<string>
 #include<cstdio>
+#include <ctime>
 #include <cstring>
+# define N 2014
 using namespace std;
+
+void createRandArray(char *n){
+    srand((int)time(0));
+    for (int i = 0; i < N; i++){
+        n[i] = (int)(rand()%100)/10+'0';
+    }
+}
 
 int bigIntPrime(char* n, int m){
     int ans = 0;
@@ -26,20 +35,22 @@ bool primeJudger(char * n){
     }
     return true;
 }
+
 int main(){
-    char n[1024];
-    cout<<"请输入欲判断素数的大整数（<=1024位）：";
-    cin>>n;
-    cout<<"数字"<<n;
-    if(primeJudger(n)){
-        cout<<"是素数";
-    }else{
-        cout<<"不是素数";
+    char n[N];
+
+    createRandArray(n);
+//    cout<<n[0];
+
+    cout<<"create rand big int number "<<endl;
+    for(int i = 0;i<N;i++){
+        cout<<n[i];
     }
 
-
+    if(primeJudger(n)){
+        cout<<"\nis prime";
+    }else{
+        cout<<"\nis not prime";
+    }
     return 0;
 }
-
-
-
