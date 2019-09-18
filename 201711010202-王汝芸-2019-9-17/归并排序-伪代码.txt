@@ -1,0 +1,10 @@
+i0 = low,i1 = mid +1
+for j = low to high
+	if i0 < mid and(A[i0] <= A[i1] or i1 >= high)
+		B[j] = A[i0]
+		i0 = i0 + 1
+	else
+		B[j] = A[i1]
+		i1 = i1 + 1
+	end if
+end for
